@@ -1,6 +1,6 @@
 # Swinburne_project
 
-This project is to understand community attitudes towards violence against women in Australia.
+This project is to understand community attitudes towards violence against women in Australia, provided by IT departments in Swinburne University of Technology.
 
 Data are from the Twitter and Instagram.
 
@@ -21,8 +21,15 @@ nltk
 
    https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
+## 1. Data collect
 
-## 1.Functions
+raw_data.sh
+
+A shell script to collect Twitter and Instagram raw data from AURIN/tweet-infra:
+https://github.com/AURIN/tweet-infra
+
+
+## 2. Functions
 * convert:
 
 To convert numbers to months.
