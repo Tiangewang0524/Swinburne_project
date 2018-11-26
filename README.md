@@ -1,5 +1,9 @@
 # Swinburne_project
 
+This project is to understand community attitudes towards violence against women in Australia.
+
+Data are from the Twitter and Instagram.
+
 ## 0. Requisite package:
 matplotlib
 
@@ -18,4 +22,16 @@ nltk
    https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
 
-## 1.
+## 1.Functions
+* convert:
+
+To convert numbers to months.
+
+* filtered:
+
+Clean and filter Twitter/Instagram raw data with hashtag #metoo & #timesup and reserve 5 attributes:
+"tweet_id", "user_id", "user_name", "post_text" and "post_time"
+
+* sentiment:
+
+
