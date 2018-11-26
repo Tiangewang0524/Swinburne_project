@@ -4,6 +4,8 @@ This project is to understand community attitudes towards violence against women
 
 Data are from the Twitter and Instagram.
 
+Research scope is Melbourne metropolitan region.
+
 ## 0. Requisite package:
 matplotlib
 
