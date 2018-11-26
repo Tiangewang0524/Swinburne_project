@@ -34,4 +34,19 @@ Clean and filter Twitter/Instagram raw data with hashtag #metoo & #timesup and r
 
 * sentiment:
 
+Sentiment analysis on Twitter/Instagram filtered data based on vaderSentiment package.
+To evaluate the attitude (positive or negative) of each Twitter/Instagram post.
+
+* find_trollers 
+
+Find trollers (who always have negative comments on women).
+
+* word_identify
+
+Collect all the tweet and instagram posts, split them and identify the part-of-speech of the words. 
+Then store as a txt file.
+
+* word_cloud
+
+Generate word cloud for Twitter/Instagram filtered data. 
 
