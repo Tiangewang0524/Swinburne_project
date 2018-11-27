@@ -46,6 +46,10 @@ Clean and filter Twitter/Instagram raw data with hashtag #metoo & #timesup and r
 Sentiment analysis on Twitter/Instagram filtered data based on vaderSentiment package.
 To evaluate the attitude (positive or negative) of each Twitter/Instagram post.
 
+* draw_sentiment:
+
+Draw diagrams based on the result above via matplotlib package.
+
 * find_trollers:
 
 Find trollers (who always have negative comments on women).
