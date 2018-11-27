@@ -18,6 +18,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import nltk
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
 
 
 
@@ -189,9 +190,55 @@ def ins_sentiment(read_file, write_file):
     return month_attitude
 
 
+# draw the sentiment analysis
+def draw_sentiment(attitude):
+    # y axis related
+    y_axis_pos = list()
+    y_axis_neg = list()
+    y_axis_difference = list()
+    for each_data in attitude.values():
+        y_axis_pos.append(int(-(each_data['pos_count'])))
+        y_axis_neg.append(int(each_data['neg_count']))
+        y_axis_difference.append(int(each_data['neg_count']) - int(each_data['pos_count']))
+
+    # X axis related
+    x_axis = list()
+    for month in attitude.keys():
+        x_axis.append(month)
+    x_length = [i for i in range(len(x_axis))]
+
+    fig = plt.figure()
+    ax1 = fig.add_subplot(111)
+    ax1.plot(x_length, y_axis_difference, 'or-', label='difference')
+    ax1.set_title('The comparison between positive and negative comments\n', fontsize=12, color='r')
+    for i, (_x, _y) in enumerate(zip(x_length, y_axis_difference)):
+        plt.text(_x, _y, y_axis_difference[i], color='black', fontsize=10)
+
+    # left legend
+    ax1.legend(loc=1)
+    ax1.set_ylim([-500, 1000])
+    ax1.set_ylabel('difference')
+    ax2 = ax1.twinx()
+    plt.bar(x_length, y_axis_pos, alpha=0.3, color='blue', label='pos_count')
+    plt.bar(x_length, y_axis_neg, alpha=0.3, color='red', label='neg_count')
+
+    # right legend
+    ax2.legend(loc=2)
+    ax2.set_ylim([-500, 1000])
+    ax2.set_ylabel('number of count')
+
+    for i, (_x, _y) in enumerate(zip(x_length, y_axis_pos)):
+        plt.text(_x, _y - 50, y_axis_pos[i], color='maroon', fontsize=8, ha='center', va='bottom')
+    for i, (_x, _y) in enumerate(zip(x_length, y_axis_neg)):
+        plt.text(_x, _y + 5, y_axis_neg[i], color='maroon', fontsize=8, ha='center', va='bottom')
+
+    plt.xticks(x_length, x_axis)
+    plt.show()
+
+
 # find trollers
 def find_troller(read_file, write_file):
-    #count postive and negative comments for all users
+    # count positive and negative comments for all users
     user_list = dict()
     nega_user = dict()
     troller_user = dict()
