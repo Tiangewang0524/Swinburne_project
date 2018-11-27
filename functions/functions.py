@@ -4,9 +4,10 @@ Several functions:
 1. Filter the data for Twitter/Instagram with hashtag and reserve 5 attributes:
 "tweet_id", "user_id", "user_name", "post_text" and "post_time".
 
-2. Sentiment analysis through nltk.vaderSentiment for Twitter/Instagram data
+2. Sentiment analysis through nltk.vaderSentiment for Twitter/Instagram data.
+Then draw diagrams based on the result.
 
-3. Find trollers (who always have negative comments on women)
+3. Find trollers (who always have negative comments on women).
 
 4. Generate word cloud.
 
@@ -18,8 +19,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import nltk
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mtick
-
+# import matplotlib.ticker as mtick
 
 
 key_hashtag_1 = "#metoo"
@@ -325,10 +325,7 @@ def word_identify(read_file, write_file):
             if each[0] != '@' and each[0] != 'metoo' and each[0] != 'timesup' and each[0][0] != '/':
                 if each[0] != 'RT' and each[0] != 'https' and each[0] != 'SSS':
                     text.append(each[0])
-    # while 'RT' in text or 'https' in text or 'SSS' in text:
-    #     text.remove('RT')
-    #     text.remove('https')
-    #     text.remove('SSS')
+
     str_text = " ".join(text)
     write_file.write(str_text)
     print("Word_identify task done!")
