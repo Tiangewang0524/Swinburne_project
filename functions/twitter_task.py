@@ -43,6 +43,6 @@ if __name__ == "__main__":
         f2.close()
     f1.close()
 
-    # # word cloud
+    # word cloud
     fun.word_cloud(str_text)
 
