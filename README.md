@@ -6,6 +6,9 @@ Data are from the Twitter and Instagram.
 
 Research scope is Melbourne metropolitan region.
 
+Detail can be found here:
+https://www.swinburne.edu.au/research-institutes/social-innovation/research/social-data-analytics/
+
 ## 0. Requisite package:
 matplotlib
 
